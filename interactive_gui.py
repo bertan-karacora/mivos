@@ -304,6 +304,13 @@ class App(QWidget):
         QShortcut(QKeySequence(Qt.Key_Left), self).activated.connect(self.on_prev)
         QShortcut(QKeySequence(Qt.Key_Right), self).activated.connect(self.on_next)
         
+        if (num_objects >=10):
+            QShortcut(QKeySequence("ö"), self).activated.connect(functools.partial(self.hit_number_key, 10))
+        if (num_objects >=11):
+            QShortcut(QKeySequence("ä"), self).activated.connect(functools.partial(self.hit_number_key, 11))
+        if (num_objects >=12):
+            QShortcut(QKeySequence("ü"), self).activated.connect(functools.partial(self.hit_number_key, 12))
+
         # Mask saving
         # QShortcut(QKeySequence('s'), self).activated.connect(self.save)
         # QShortcut(QKeySequence('l'), self).activated.connect(self.debug_pressed)
